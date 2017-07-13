@@ -17,6 +17,10 @@
       		#messages li { padding: 5px 10px; }
       		#messages li:nth-child(odd) { background: #eee; }
     	</style>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+		<script>
+			var socket = io();
+		</script>
 	</head>
 	<body>
 		<ul id="messages"></ul>
@@ -24,7 +28,6 @@
       		<input id="m" autocomplete="off" /><button>Send</button>
     	</form>
 		<script type="text/javascript" src="common/ajax-functions.js"></script>
-		<script type="text/javascript" src="controllers/userController.client.js"></script>
 	</body>
 
 </html>
