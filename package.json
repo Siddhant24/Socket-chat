@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "socket-chat",
   "version": "0.0.1",
-  "description": "",
+  "description": "socket.io app for chatting",
   "main": "server.js",
   "repository": {
     "type": "git",
