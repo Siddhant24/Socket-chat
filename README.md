@@ -1,3 +1,3 @@
 # Socket Chat
 
-### Live chatting built app using Node.js and Socket.io
+### Live chatting app built using Node.js and Socket.io
