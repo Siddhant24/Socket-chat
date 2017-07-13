@@ -2,7 +2,7 @@
 
 var path = process.cwd();
 
-module.exports = function (app, passport) {
+module.exports = function (app, passport, io) {
 
 	function isLoggedIn (req, res, next) {
 		if (req.isAuthenticated()) {
@@ -46,5 +46,9 @@ module.exports = function (app, passport) {
 			successRedirect: '/',
 			failureRedirect: '/login'
 		}));
+		
+	io.on('connection', function(socket){
+		console.log('a user connected');
+	});
 
 };
