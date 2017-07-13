@@ -16,8 +16,15 @@ module.exports = function (app, passport, io) {
 		.get(function (req, res) {
 			res.sendFile(path + '/public/index.html');
 		});
+		
+	io.on('connection', function(socket){
+		console.log('a user connected');
+		socket.on('disconnect', function(){
+    		console.log('user disconnected');
+		});
+	});
 
-	app.route('/login')
+/*	app.route('/login')
 		.get(function (req, res) {
 			res.sendFile(path + '/public/login.html');
 		});
@@ -45,10 +52,6 @@ module.exports = function (app, passport, io) {
 		.get(passport.authenticate('github', {
 			successRedirect: '/',
 			failureRedirect: '/login'
-		}));
-		
-	io.on('connection', function(socket){
-		console.log('a user connected');
-	});
+		})); */
 
 };
