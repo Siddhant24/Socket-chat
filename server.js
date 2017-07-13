@@ -7,6 +7,8 @@ var passport = require('passport');
 var session = require('express-session');
 
 var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 require('dotenv').load();
 require('./app/config/passport')(passport);
 
@@ -26,7 +28,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-routes(app, passport);
+routes(app, passport, io);
 
 var port = process.env.PORT || 8080;
 app.listen(port,  function () {
